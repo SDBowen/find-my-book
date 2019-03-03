@@ -5,8 +5,8 @@ import Book from "./Book";
 class Results extends Component {
   render() {
     return (
-      <section class="section-results">
-        <div class="book-results">
+      <section className="section-results">
+        <div className="book-results">
           <Book />
           <Book />
           <Book />

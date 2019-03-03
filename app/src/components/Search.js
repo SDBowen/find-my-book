@@ -13,13 +13,13 @@ class Search extends Component {
 
   render() {
     return (
-      <section class="section-search">
-        <div class="search-box">
+      <section className="section-search">
+        <div className="search-box">
           <input
             type="text"
             name="search"
             placeholder="Enter a Book Title"
-            class="search-box__input"
+            className="search-box__input"
             value={this.state.searchQuery}
             onChange={this.handleInputChange}
           />
