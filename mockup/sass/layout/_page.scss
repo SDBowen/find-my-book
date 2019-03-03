@@ -1,0 +1,31 @@
+body {
+  margin: 0 20rem;
+}
+
+.container-main {
+  justify-content: space-between;
+  flex-direction: column;
+
+  height: 100vh;
+  display: flex;
+}
+.page-nav {
+  flex: 0 0 100%;
+  max-height: 10rem;
+}
+
+.section-search {
+  flex: 0 0 100%;
+  max-height: 10rem;
+}
+
+.book-results {
+  margin-left: 10rem;
+  flex-wrap: wrap;
+
+  display: flex;
+}
+
+.section-results {
+  margin-bottom: 10rem;
+}

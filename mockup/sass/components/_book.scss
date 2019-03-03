@@ -1,0 +1,13 @@
+.book-card {
+  display: flex;
+  margin-top: 3rem;
+
+  &__details {
+    max-width: 15rem;
+    margin: 0 1rem 0 2rem;
+    flex-direction: column;
+    justify-content: center;
+
+    display: flex;
+  }
+}
