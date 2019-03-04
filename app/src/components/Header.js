@@ -13,7 +13,7 @@ class Header extends Component {
         <nav className="navigation">
           <div className="nav-box">
             <div className="nav-box__links">
-              <button className="">Reset</button>
+              {/* <button className="ui button">Reset</button> */}
             </div>
           </div>
         </nav>

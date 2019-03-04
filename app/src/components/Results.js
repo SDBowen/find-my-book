@@ -5,7 +5,7 @@ const Results = props => {
   let books = {};
 
   if (typeof props.books == "undefined") {
-    return (books = <p>No results</p>);
+    books = <p className="no-results">No results</p>;
   } else {
     books = props.books.map(book => {
       return <Book key={book.id} book={book} />;

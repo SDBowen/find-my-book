@@ -1,4 +1,5 @@
 import React from "react";
+import cover from "../../src/default-book.png";
 
 const Book = props => {
   let {
@@ -7,7 +8,7 @@ const Book = props => {
 
   if (typeof imageLinks == "undefined") {
     imageLinks = {};
-    imageLinks.thumbnail = "/src/default-book.png";
+    imageLinks.thumbnail = cover;
   }
 
   return (
@@ -16,17 +17,19 @@ const Book = props => {
         <img src={imageLinks.thumbnail} alt="Book Cover" />
       </div>
       <div className="book-card__details">
+        <div className="book-card__title">
+          <p>
+            <b>{title}</b>
+          </p>
+        </div>
         <div className="book-card__author">
           <p>{authors}</p>
-        </div>
-        <div className="book-card__title">
-          <p>{title}</p>
         </div>
         <div className="book-card__publisher">
           <p>{publisher}</p>
         </div>
         <div className="book-card__link">
-          <a className="" href={infoLink} role="button">
+          <a className="ui primary button" href={infoLink} role="button">
             More Detail
           </a>
         </div>
