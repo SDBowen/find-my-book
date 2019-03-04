@@ -1,31 +1,22 @@
-import React, { Component } from "react";
-
+import React from "react";
 import Book from "./Book";
 
-class Results extends Component {
-  render() {
-    return (
-      <section className="section-results">
-        <div className="book-results">
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-          <Book />
-        </div>
-      </section>
-    );
+const Results = props => {
+  let books = {};
+
+  if (typeof props.books == "undefined") {
+    return (books = <p>No results</p>);
+  } else {
+    books = props.books.map(book => {
+      return <Book key={book.id} book={book} />;
+    });
   }
-}
+
+  return (
+    <section className="section-results">
+      <div className="book-results">{books}</div>
+    </section>
+  );
+};
 
 export default Results;

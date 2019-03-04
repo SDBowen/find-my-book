@@ -6,9 +6,16 @@ class Search extends Component {
   };
 
   handleInputChange = e => {
-    this.setState({
-      searchQuery: e.target.value
-    });
+    this.setState(
+      {
+        searchQuery: e.target.value
+      },
+      () => {
+        if (this.state.searchQuery !== "") {
+          this.props.onChange(this.state.searchQuery);
+        }
+      }
+    );
   };
 
   render() {
@@ -20,8 +27,8 @@ class Search extends Component {
             name="search"
             placeholder="Enter a Book Title"
             className="search-box__input"
-            value={this.state.searchQuery}
             onChange={this.handleInputChange}
+            value={this.state.searchQuery}
           />
         </div>
       </section>

@@ -1,31 +1,38 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Book extends Component {
-  render() {
-    return (
-      <div className="book-card">
-        <div className="book-card__picture">
-          <img src="https://via.placeholder.com/150x200" alt="Book Cover" />
+const Book = props => {
+  let {
+    volumeInfo: { authors, title, publisher, imageLinks, infoLink }
+  } = props.book;
+
+  if (typeof imageLinks == "undefined") {
+    imageLinks = {};
+    imageLinks.thumbnail = "/src/default-book.png";
+  }
+
+  return (
+    <div className="book-card">
+      <div className="book-card__picture">
+        <img src={imageLinks.thumbnail} alt="Book Cover" />
+      </div>
+      <div className="book-card__details">
+        <div className="book-card__author">
+          <p>{authors}</p>
         </div>
-        <div className="book-card__details">
-          <div className="book-card__author">
-            <p>Lorem ipsum dolor</p>
-          </div>
-          <div className="book-card__title">
-            <p>Lorem ipsum, dolor consectetur sit amet consectetur</p>
-          </div>
-          <div className="book-card__publisher">
-            <p>amet Lorem ipsum dolor</p>
-          </div>
-          <div className="book-card__link">
-            <a className="" href="https://book" role="button">
-              More Detail
-            </a>
-          </div>
+        <div className="book-card__title">
+          <p>{title}</p>
+        </div>
+        <div className="book-card__publisher">
+          <p>{publisher}</p>
+        </div>
+        <div className="book-card__link">
+          <a className="" href={infoLink} role="button">
+            More Detail
+          </a>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Book;
